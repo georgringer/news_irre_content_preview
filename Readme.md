@@ -18,3 +18,7 @@ composer require georgringer/news-irre-content-preview
 ```
 
 or by downloading the extension from the TER and installing it in the Extension Manager.
+
+## Thanks to
+
+This feature has been sponsored by https://webconsulting.at/. Thanks a lot!
