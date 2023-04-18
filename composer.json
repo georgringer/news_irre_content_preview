@@ -1,0 +1,39 @@
+{
+    "name": "georgringer/news-irre-content-preview",
+    "type": "typo3-cms-extension",
+    "description": "",
+    "keywords": [
+        "TYPO3",
+        "extension",
+        "article",
+        "news"
+    ],
+    "support": {
+        "source": "https://github.com/georgringer/news-irre-content-preview",
+        "issues": "https://github.com/georgringer/news-irre-content-preview"
+    },
+    "authors": [
+        {
+            "name": "Georg Ringer",
+            "role": "Developer"
+        }
+    ],
+    "license": [
+        "GPL-2.0-or-later"
+    ],
+    "require": {
+        "georgringer/news": "^10 || ^11",
+        "typo3/cms-core": "^v11.5.23"
+    },
+    "autoload": {
+        "psr-4": {
+            "GeorgRinger\\NewsIrreContentPreview\\": "Classes"
+        }
+    },
+
+    "extra": {
+        "typo3/cms": {
+            "extension-key": "news_irre_content_preview"
+        }
+    }
+}
