@@ -51,8 +51,9 @@ class InlineRecordContainerForNews extends InlineRecordContainer
         $objectId = $domObjectId . '-' . $foreignTable . '-' . ($rec['uid'] ?? 0);
 
 
+        $renderFallback = false;
+        $recordTitle = "";
         if (is_array($raw) && !empty($raw) && $raw['CType'] !== 'gridelements_pi1') {
-            $renderFallback = false;
             $pageLayoutView = GeneralUtility::makeInstance(PageLayoutView::class);
             $pageLayoutView->doEdit = false;
             foreach ($GLOBALS['TCA']['tt_content']['columns']['CType']['config']['items'] as $val) {
