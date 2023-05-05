@@ -50,9 +50,9 @@ class InlineRecordContainerForNews extends InlineRecordContainer
         $domObjectId = $this->inlineStackProcessor->getCurrentStructureDomObjectIdPrefix($data['inlineFirstPid']);
         $objectId = $domObjectId . '-' . $foreignTable . '-' . ($rec['uid'] ?? 0);
 
+        $recordTitle = '';
+        $renderFallback = true;
 
-        $renderFallback = false;
-        $recordTitle = "";
         if (is_array($raw) && !empty($raw) && $raw['CType'] !== 'gridelements_pi1') {
             $pageLayoutView = GeneralUtility::makeInstance(PageLayoutView::class);
             $pageLayoutView->doEdit = false;
