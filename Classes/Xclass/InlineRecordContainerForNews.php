@@ -51,7 +51,7 @@ class InlineRecordContainerForNews extends InlineRecordContainer
         $objectId = $domObjectId . '-' . $foreignTable . '-' . ($rec['uid'] ?? 0);
 
         $recordTitle = '';
-        $renderFallback = true;
+        $renderDefault = false;
 
         if (is_array($raw) && !empty($raw) && $raw['CType'] !== 'gridelements_pi1') {
             $pageLayoutView = GeneralUtility::makeInstance(PageLayoutView::class);
@@ -62,11 +62,11 @@ class InlineRecordContainerForNews extends InlineRecordContainer
 
             $recordTitle = trim($pageLayoutView->tt_content_drawItem($raw));
             if (strpos($recordTitle, $this->getWarningLabel($raw['CType'])) !== false) {
-                $renderFallback = true;
+                $renderDefault = true;
             }
         }
 
-        if ($renderFallback) {
+        if ($renderDefault) {
             $recordTitle = $data['recordTitle'];
             if (!empty($recordTitle)) {
                 // The user function may return HTML, therefore we can't escape it
